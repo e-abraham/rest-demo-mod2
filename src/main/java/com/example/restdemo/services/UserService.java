@@ -27,11 +27,13 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
+    //new user w/plaintext password
     public User saveUser(User user){
         user.setPassword(Hasher.hash(user.getPassword()));
         return userRepository.save(user);
     }
 
+    //new users w/plaintext passwords
     public List<User> saveUsers(List<User> users){
         for (User user: users){
             user.setPassword(Hasher.hash(user.getPassword()));
@@ -39,6 +41,7 @@ public class UserService {
         return userRepository.saveAll(users);
     }
 
+    //existing user w/hashed password
     public User updateUser(Long id, User userUpdate){
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User with id: " + id + " does not exist"));
