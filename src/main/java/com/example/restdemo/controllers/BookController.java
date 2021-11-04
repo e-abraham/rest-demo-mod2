@@ -40,7 +40,7 @@ public class BookController {
         return ResponseEntity.ok(book);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("id/{id}")
     //update book by id from path and request body
     public ResponseEntity<Book> updateBook(@PathVariable long id, @RequestBody Book book){
         Book updateBook = bookRepository.findById(id)
@@ -55,7 +55,7 @@ public class BookController {
         return ResponseEntity.ok(updateBook);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("id/{id}")
     //delete book by id from path
     public ResponseEntity<HttpStatus> deleteBook(@PathVariable long id){
         Book book = bookRepository.findById(id)

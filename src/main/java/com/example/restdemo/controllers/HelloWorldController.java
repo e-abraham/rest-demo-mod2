@@ -14,7 +14,7 @@ public class HelloWorldController {
 
     }
 
-    @GetMapping(value="/hello/name/{name}")
+    @GetMapping(value="/rest-demo/hello/name/{name}")
     public String sayHello(@PathVariable(name = "name", required = true) String name){
 
         return "Hello " + name + "!";
