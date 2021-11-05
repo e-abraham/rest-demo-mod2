@@ -9,7 +9,7 @@ public class RestDemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestDemoApplication.class, args);
-		System.out.println("App is up and running");
+		System.out.println("\n" + "------------------------------" + "\n" + "*** App is up and running ***" + "\n" + "------------------------------" + "\n");
 	}
 
 }

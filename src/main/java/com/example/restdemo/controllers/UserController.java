@@ -1,7 +1,6 @@
 package com.example.restdemo.controllers;
 
 import com.example.restdemo.models.User;
-//import com.example.restdemo.services.HasherService;
 import com.example.restdemo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,9 +17,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-//    @Autowired
-//    HasherService hasherService;
-
     @GetMapping
     public List<User> getAllUsers(){
         return userService.getAllUsers();
@@ -28,8 +24,6 @@ public class UserController {
 
     @PostMapping
     public User createUser(@RequestBody User user){
-//        String hashPassword = hasherService.hash(user.getPassword());
-//        user.setPassword(hashPassword);
         return userService.saveUser(user);
     }
 
