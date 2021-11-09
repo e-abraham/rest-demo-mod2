@@ -11,6 +11,7 @@ import java.util.List;
 @Service
 public class UserService {
 
+    //Spring injects repository
     @Autowired
     UserRepository userRepository;
 

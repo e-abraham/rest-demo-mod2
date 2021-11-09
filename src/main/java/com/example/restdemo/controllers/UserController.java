@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//Manages source of requests
 @CrossOrigin("*")
 @RestController
+//Optional, Every route in controller starts with this
 @RequestMapping("/rest-demo/users")
 public class UserController {
 
@@ -27,6 +29,7 @@ public class UserController {
         return userService.saveUser(user);
     }
 
+    //Curly braces are path variable, like /rest-demo/users/5
     @GetMapping("id/{id}")
     public ResponseEntity<User> getUserById(@PathVariable long id){
         User user = userService.getUserById(id);
